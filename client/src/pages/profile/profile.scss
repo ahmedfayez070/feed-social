@@ -1,0 +1,164 @@
+@import "../../style.scss";
+
+.profile {
+  @include themify($themes) {
+    background-color: themed("bgSoft");
+    min-height: calc(100vh - 50px);
+
+    .images {
+      position: relative;
+      width: 100%;
+      height: 300px;
+
+      .cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .profile-img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 200px;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: auto;
+      }
+    }
+
+    .profile-container {
+      padding: 20px 50px;
+
+      @include tablet {
+        padding: 30px;
+      }
+
+      @include mobile {
+        padding: 8px;
+      }
+
+      .u-info {
+        -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        height: 200px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 120px 30px 50px;
+        background-color: themed("bg");
+        color: themed("textColor");
+        margin-bottom: 30px;
+
+        @include mobile {
+          flex-direction: column;
+          justify-content: start;
+          gap: 30px;
+          height: 50vh;
+          margin-top: 100px;
+          padding: 20px;
+        }
+
+        .left {
+          display: flex;
+          gap: 5px;
+          flex: 1;
+
+          @include mobile {
+            width: 100%;
+            justify-content: center;
+          }
+
+          .icon {
+            font-size: 2rem;
+
+            @include tablet {
+              font-size: 1.4rem;
+            }
+          }
+
+          a {
+            color: themed("textColorSoft");
+          }
+        }
+
+        .center {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+
+          @include mobile {
+            width: 100%;
+          }
+
+          .name {
+            font-size: 30px;
+            font-weight: bold;
+          }
+
+          .info {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .item {
+              display: flex;
+              gap: 5px;
+              align-items: center;
+              color: themed("textColorSoft");
+
+              span {
+                font-size: 12px;
+
+                @include tablet {
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+
+          button {
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            border: none;
+            border-radius: 3px;
+            background-color: #5271ff;
+            width: 80px;
+            transition: all 0.2s ease-in-out;
+
+            @include mobile {
+              font-size: 14px;
+              width: 80px;
+            }
+
+            &:hover {
+              opacity: 0.9;
+            }
+          }
+        }
+
+        .right {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 10px;
+
+          @include mobile {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}

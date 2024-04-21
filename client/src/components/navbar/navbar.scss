@@ -1,0 +1,127 @@
+@import "../../style.scss";
+
+.navbar {
+  @include themify($themes) {
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: themed("bg");
+    color: themed("textColor");
+    height: 50px;
+    border-bottom: 1px solid themed("border");
+    position: sticky;
+    top: 0;
+
+    .search-usernames {
+      position: absolute;
+      top: 50px;
+      left: 0%;
+      width: 50%;
+      padding: 0 10px 10px;
+      background-color: #fff;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+
+      a {
+        text-transform: capitalize;
+        width: 100%;
+        margin: 10px 0 0 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        span {
+          color: #222;
+          font-weight: 500;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      span {
+        font-size: 20px;
+        color: themed("logo");
+        font-weight: bold;
+      }
+
+      .search {
+        display: flex;
+        align-items: center;
+        border: 1px solid themed("border");
+        padding: 5px;
+        border-radius: 5px;
+        position: relative;
+
+        input {
+          padding: 10px;
+          border: none;
+          width: 300px;
+          height: 25px;
+          font-size: 14px;
+          background-color: themed("bgSoft");
+          color: themed("textColor");
+
+          @include mobile {
+            display: none;
+          }
+
+          @include tablet {
+            width: 200px;
+          }
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      @include mobile {
+        display: none;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+
+        img {
+          width: 30px;
+          height: 30px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+
+        span {
+          font-size: 18px;
+          color: themed("textColorSoft");
+        }
+
+        .logout {
+          background-color: themed("textColorSoft");
+          color: themed("bgSoft");
+          border: none;
+          padding: 5px 10px;
+          margin-left: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

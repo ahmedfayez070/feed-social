@@ -1,0 +1,122 @@
+@import "../../style.scss";
+
+.right-bar {
+  @include themify($themes) {
+    flex: 3;
+    position: sticky;
+    top: 50px;
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+    background-color: themed("bgSoft");
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .item {
+        background-color: themed("bg");
+        color: themed("textColor");
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        padding: 20px;
+
+        h3 {
+          font-size: 14px;
+          color: themed("textColorSoft");
+        }
+
+        .user {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 10px;
+
+          .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+
+            img {
+              width: 30px;
+              height: 30px;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+
+            span {
+              font-size: 14px;
+              color: themed("textColor");
+            }
+
+            p {
+              font-size: 12px;
+              color: themed("textColorSoft");
+            }
+
+            .online {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background-color: limegreen;
+              position: absolute;
+              top: -1px;
+              left: 22px;
+            }
+          }
+
+          .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button {
+              color: white;
+              padding: 10px 5px;
+              min-width: 50px;
+              cursor: pointer;
+              font-size: 12px;
+              border: none;
+              border-radius: 5px;
+              transition: all 0.2s ease-in-out;
+
+              &:hover {
+                opacity: 0.9;
+              }
+
+              &:first-child {
+                background-color: #5271ff;
+              }
+
+              &:last-child {
+                background-color: #f0544f;
+              }
+            }
+          }
+
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

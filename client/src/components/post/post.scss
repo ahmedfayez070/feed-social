@@ -1,0 +1,106 @@
+@import "../../style.scss";
+
+.post {
+  @include themify($themes) {
+    -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    border-radius: 10px 10px 0 0;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    .container {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .user {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        .user-info {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+
+          .details {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            name {
+              font-weight: 500;
+            }
+
+            .date {
+              font-size: 12px;
+            }
+          }
+        }
+
+        .icon {
+          cursor: pointer;
+
+          .delete {
+            position: absolute;
+            right: 50px;
+            top: 0px;
+            border: none;
+            background-color: #f0544f;
+            cursor: pointer;
+            color: white;
+            padding: 10px;
+          }
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        p {
+          text-align: justify;
+          color: themed("textColor");
+          font-size: 14px;
+        }
+
+        img {
+          width: 100%;
+          max-height: 500px;
+          object-fit: cover;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .button {
+          display: flex;
+          gap: 5px;
+          align-items: center;
+          cursor: pointer;
+          font-size: 14px;
+
+          span {
+            @include mobile {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
